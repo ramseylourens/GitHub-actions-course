@@ -7,6 +7,10 @@ jobs:
         steps: 
             - name: Checkout Code
               uses: actions/checkout@v4
-            - name: Print Folders
-              run: tree -L 2
-        
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20.x'
+            - name: Install Dependecies
+              working-directory: 04-using-actions/react-app
+              run: npm ci
